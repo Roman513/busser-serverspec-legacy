@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'busser/serverspec/version'
+require 'busser/serverspeclegacy/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'busser-serverspec'
-  spec.version       = Busser::Serverspec::VERSION
-  spec.authors       = ['HIGUCHI Daisuke']
+  spec.name          = 'busser-serverspeclegacy'
+  spec.version       = Busser::Serverspeclegacy::VERSION
+  spec.authors       = ['HIGUCHI Daisuke', 'Roman Belousov']
   spec.email         = ['d-higuchi@creationline.com']
-  spec.description   = %q{A Busser runner plugin for Serverspec}
+  spec.description   = %q{A Busser runner plugin for Serverspec. Fork for Chef 12 and Ruby 2.3. Just rename your serverspec dirs to serverspeclegacy}
   spec.summary       = spec.description
-  spec.homepage      = 'https://github.com/test-kitchen/busser-serverspec'
+  spec.homepage      = 'https://github.com/Roman513/busser-serverspeclegacy'
   spec.license       = 'Apache 2.0'
 
   spec.files         = `git ls-files`.split($/)

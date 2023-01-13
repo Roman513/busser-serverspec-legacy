@@ -1,5 +1,11 @@
 # You should use Kitchen::Verifier::Shell + Serverspec
 
+## 0.5.12 2023-01-13
+
+FORK
+Version for Ruby 2.3 (Chef 12)
+The only difference is pinned `install_gem('bundler', '~> 1.16.1')` in postinstall.
+
 ## 0.5.10 2016-08-12
 
 * use container-based test at travis-ci.

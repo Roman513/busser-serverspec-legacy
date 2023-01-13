@@ -4,13 +4,13 @@ Feature: Test command
   I want my tests to run when the serverspec runner plugin is installed
 
   Background:
-    Given a test BUSSER_ROOT directory named "busser-serverspec-test"
-    And a sandboxed GEM_HOME directory named "busser-serverspec-gem-home"
-    When I successfully run `busser plugin install busser-serverspec --force-postinstall`
+    Given a test BUSSER_ROOT directory named "busser-serverspeclegacy-test"
+    And a sandboxed GEM_HOME directory named "busser-serverspeclegacy-gem-home"
+    When I successfully run `busser plugin install busser-serverspeclegacy --force-postinstall`
     Given a suite directory named "serverspec"
 
   Scenario: A passing test suite
-    Given a file in suite "serverspec" named "localhost/default_spec.rb" with:
+    Given a file in suite "serverspeclegacy" named "localhost/default_spec.rb" with:
     """
     require 'serverspec'
     set :backend, :exec
@@ -28,7 +28,7 @@ Feature: Test command
     And the exit status should be 0
 
   Scenario: A failing test suite
-    Given a file in suite "serverspec" named "localhost/default_spec.rb" with:
+    Given a file in suite "serverspeclegacy" named "localhost/default_spec.rb" with:
     """
     require 'serverspec'
     set :backend, :exec

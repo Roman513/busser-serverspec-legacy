@@ -1,8 +1,15 @@
-# <a name="title"></a> Busser::RunnerPlugin::Serverspec
+# <a name="title"></a> Busser::RunnerPlugin::Serverspeclegacy
 
-[![Gem Version](https://badge.fury.io/rb/busser-serverspec.svg)](http://rubygems.org/gems/busser-serverspec) [![Build Status](https://secure.travis-ci.org/test-kitchen/busser-serverspec.svg?branch=master)](https://travis-ci.org/test-kitchen/busser-serverspec) [![Code Climate](https://codeclimate.com/github/cl-lab-k/busser-serverspec.svg)](https://codeclimate.com/github/cl-lab-k/busser-serverspec)
+[![Gem Version](https://badge.fury.io/rb/busser-serverspeclegacy.svg)](http://rubygems.org/gems/busser-serverspeclegacy) [![Build Status](https://secure.travis-ci.org/test-kitchen/busser-serverspeclegacy.svg?branch=master)](https://travis-ci.org/test-kitchen/busser-serverspeclegacy)
 
 A Busser runner plugin for Serverspec
+This is a FORK for copatinibility with Chef 12 and Ruby 2.3. Rename you `test/integration/*/serverspec` to `test/integration/*/serverspeclegacy` to use it.
+
+```bash
+ls -d1 test/integration/*/serverspec | xargs -I{} mv {}{,legacy}
+```
+
+The only difference with original gem is pinned `install_gem('bundler', '~> 1.16.1')` in postinstall, credits to [etherops](https://github.com/etherops), see the [comment](https://github.com/test-kitchen/busser-serverspec/issues/55#issuecomment-468440943)
 
 ## Status
 
@@ -14,13 +21,13 @@ Please read the Busser [plugin usage][plugin_usage] page for more details.
 
 ## <a name="usage"></a> Usage
 
-Please put test files into [COOKBOOK]/test/integration/[SUITES]/serverspec/
+Please put test files into [COOKBOOK]/test/integration/[SUITES]/serverspeclegacy/
 
 ```cookbook
 `-- test
     `-- integration
         `-- default
-            `-- serverspec
+            `-- serverspeclegacy
                 |-- Gemfile
                 |-- localhost
                 |   `-- httpd_spec.rb
@@ -33,7 +40,7 @@ Please put test files into [COOKBOOK]/test/integration/[SUITES]/serverspec/
 
 ### <a name="spec"></a> File Matching
 
-Globbing pattern to match files is `"serverspec/*/*_spec.rb"`.
+Globbing pattern to match files is `"serverspeclegacy/*/*_spec.rb"`.
 You need to use `"_spec.rb"` (underscore), not `"-spec.rb"` (minus).
 
 ### <a name="serverspec1"></a> Specify Serverspec version
