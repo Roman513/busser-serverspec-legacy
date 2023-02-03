@@ -26,6 +26,7 @@ require 'rubygems/dependency_installer'
 class Busser::RunnerPlugin::Serverspeclegacy < Busser::RunnerPlugin::Base
   postinstall do
     install_gem('bundler', '~> 1.16.1')
+    install_gem('net-ssh', '< 7.0')
   end
 
   def test

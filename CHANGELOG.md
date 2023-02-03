@@ -1,5 +1,9 @@
 # You should use Kitchen::Verifier::Shell + Serverspec
 
+## 0.5.13 2023-02-03
+
+The only difference is pinned `install_gem('net-ssh', '< 7.0')` in postinstall cuz I'm lazy to add it into all cookbooks.
+
 ## 0.5.12 2023-01-13
 
 FORK
